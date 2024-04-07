@@ -1,0 +1,65 @@
+@import "../mixins/flex/flex-row.scss";
+@import "../mixins/grid/grid-cols.scss";
+@import "../variables/colors.scss";
+@import "../variables/transitions.scss";
+@import "../variables/borders.scss";
+
+.container .mood-select-header {
+  @include grid-cols(1);
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+
+  .mood-faces-section {
+    gap: 1.5rem;
+
+    .mood-face {
+      position: relative;
+      padding: 0 0.5rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.25rem;
+        height: 0;
+        border-radius: 0.5rem;
+        transition-duration: $smooth;
+      }
+
+      &.mood-smile-face::before {
+        background-color: $smile_color;
+      }
+
+      &.mood-sad-face::before {
+        background-color: $sad_color;
+      }
+
+      &.mood-angry-face::before {
+        background-color: $angry_color;
+      }
+
+      &.active::before {
+        transition-duration: $smooth;
+        height: 50%;
+      }
+
+      img {
+        width: 2.5rem;
+        cursor: pointer;
+      }
+    }
+
+    &.active {
+      background-color: $white_color;
+      padding: 0.3rem;
+      border-radius: $rounded;
+    }
+  }
+
+  p {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+}

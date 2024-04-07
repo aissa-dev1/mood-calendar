@@ -1,0 +1,12 @@
+@import "../variables/sizes.scss";
+@import "../mixins/grid/grid-cols.scss";
+
+@media only screen and (min-width: $large) {
+  .container {
+    width: $large;
+
+    .mood-celender-header {
+      @include grid-cols(2);
+    }
+  }
+}

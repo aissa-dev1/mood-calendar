@@ -1,0 +1,25 @@
+@import "../variables/sizes.scss";
+@import "../mixins/grid/grid-cols.scss";
+@import "../mixins/flex/flex.scss";
+
+@media only screen and (min-width: $small) {
+  .container {
+    width: $small;
+
+    .mood-title-header,
+    .mood-select-header,
+    footer {
+      text-align: center;
+    }
+
+    .mood-select-header {
+      .mood-faces-section {
+        @include flex(row, center, center);
+      }
+    }
+
+    .mood-celender-header {
+      @include grid-cols(1);
+    }
+  }
+}

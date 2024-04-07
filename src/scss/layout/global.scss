@@ -1,0 +1,25 @@
+@import "../mixins/reset/reset-spaces.scss";
+@import "../variables/colors.scss";
+
+* {
+  @include reset-spaces;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
+.light {
+  --bg-color: #fff;
+  --color: #212024;
+  --n-day-color: #fff;
+}
+
+.dark {
+  --bg-color: #212024;
+  --color: #fff;
+  --n-day-color: #212024;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--color);
+}

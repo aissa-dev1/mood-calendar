@@ -1,0 +1,61 @@
+@import "../variables/colors.scss";
+@import "../mixins/flex/flex.scss";
+@import "../mixins/flex/flex-col.scss";
+@import "../variables/borders.scss";
+
+.container .mood-actions-header {
+  @include flex-col;
+  gap: 0.5rem;
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  .random-mood-section,
+  .reset-mood-section,
+  .color-theme-section,
+  .shape-section,
+  .emoji-section {
+    @include flex(row, center, center);
+    width: 2.5rem;
+    height: 2rem;
+    border-radius: $rounded;
+    cursor: pointer;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .random-mood-section {
+    background-color: $smile_color;
+
+    img {
+      width: 2rem;
+    }
+  }
+
+  .emoji-section {
+    background-color: $angry_color;
+
+    img {
+      width: 1rem;
+    }
+  }
+
+  .color-theme-section {
+    background-color: $sad_color;
+
+    img {
+      width: 1rem;
+    }
+  }
+
+  .reset-mood-section,
+  .shape-section {
+    background-color: $grey_color;
+
+    img {
+      width: 1rem;
+    }
+  }
+}

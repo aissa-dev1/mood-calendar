@@ -1,0 +1,16 @@
+.container footer {
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  background-color: var(--color);
+  color: var(--bg-color);
+  margin-top: 0.5rem;
+
+  .text {
+    font-weight: 500;
+  }
+
+  .dev {
+    font-weight: bold;
+  }
+}

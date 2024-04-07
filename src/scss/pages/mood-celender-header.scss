@@ -1,0 +1,100 @@
+@import "../mixins/grid/grid-cols.scss";
+@import "../mixins/flex/flex.scss";
+@import "../mixins/flex/flex-col.scss";
+@import "../mixins/flex/flex-row.scss";
+@import "../variables/borders.scss";
+@import "../variables/colors.scss";
+@import "../variables/transitions.scss";
+
+.container .mood-celender-header {
+  gap: 1rem;
+  margin: 0.5rem 0;
+
+  .month-section {
+    @include flex-col;
+    gap: 0.5rem;
+
+    .month {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .t-days-section {
+      @include grid-cols(7);
+      gap: 0.5rem;
+    }
+
+    .n-days-section {
+      @include grid-cols(7);
+      gap: 0.5rem;
+
+      .n-day {
+        span {
+          @include flex(row, center, center);
+          width: 1.5rem;
+          height: 1.5rem;
+          border: 2px solid transparent;
+          background-color: $grey_color;
+          color: $white_color;
+          font-size: 0.75rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition-duration: $smooth;
+
+          &.circle {
+            border-radius: 50%;
+          }
+
+          &.square {
+            border-radius: $squared;
+          }
+
+          &.hide {
+            background-color: transparent !important;
+            cursor: default;
+          }
+
+          &:hover {
+            transform: scale(1.25);
+          }
+
+          &.smile-mood {
+            background-color: $smile_color;
+            color: var(--n-day-color);
+          }
+
+          &.sad-mood {
+            background-color: $sad_color;
+            color: var(--n-day-color);
+          }
+
+          &.angry-mood {
+            background-color: $angry_color;
+            color: var(--n-day-color);
+          }
+
+          &.error {
+            background-color: #fff;
+            color: #d8000c;
+            border-color: $angry_color;
+            animation: error 0.25s ease;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+}

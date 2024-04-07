@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/main.scss" />
+    <title>2023 Mood Calendar</title>
+  </head>
+  <body class="light">
+    <main id="app" class="container">
+      <header class="mood-title-header">
+        <h3>2023 Mood Calendar</h3>
+
+        <p>color each day depending on what your mood was is</p>
+      </header>
+
+      <header class="mood-select-header">
+        <p>Select mood:</p>
+
+        <section class="mood-faces-section">
+          <div class="mood-face mood-smile-face">
+            <img id="smile_face_img" src="./halloween/smile.svg" alt="smile" />
+          </div>
+
+          <div class="mood-face mood-sad-face">
+            <img id="sad_face_img" src="./halloween/sad.svg" alt="sad" />
+          </div>
+
+          <div class="mood-face mood-angry-face">
+            <img id="angry_face_img" src="./halloween/angry.svg" alt="angry" />
+          </div>
+        </section>
+
+        <p>then click on the <span id="shape"></span> below</p>
+      </header>
+
+      <header class="mood-celender-header"></header>
+
+      <header class="mood-actions-header">
+        <section class="random-mood-section">
+          <img src="./action/random.svg" alt="random-mood" />
+        </section>
+
+        <section class="reset-mood-section">
+          <img src="./action/reset.svg" alt="reset-mood" />
+        </section>
+
+        <section class="color-theme-section">
+          <img id="theme_img" src="./action/moon.svg" alt="moon" />
+        </section>
+
+        <section class="shape-section">
+          <img id="shape_img" src="./action/squared.svg" alt="squared" />
+        </section>
+
+        <section class="emoji-section">
+          <img id="emoji_img" src="./face/normal.svg" alt="normal" />
+        </section>
+      </header>
+
+      <footer>
+        <p class="text">Created by <span class="dev">Aissa Bedr</span></p>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
